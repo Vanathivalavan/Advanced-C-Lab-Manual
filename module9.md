@@ -13,12 +13,31 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+
+int stack[100], top, i;
+
+void display()
+{
+    if(top == -1)
+    {
+        printf("stack is empty");
+    }
+    else
+    {
+        for(i = top; i >= 0; i--)
+        {
+            printf("%d->", stack[i]);
+        }
+    }
+}
+
+```
 
 Output:
 
-//paste your output here
 
+<img width="807" height="572" alt="image" src="https://github.com/user-attachments/assets/411ab210-ba86-422e-8a46-bd9b9379c408" />
 
 
 Result:
@@ -36,12 +55,22 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+
+int stack[100];
+int top;
+
+void push(int data)
+{
+    stack[++top] = data;
+}
+
+```
 
 Output:
 
-//paste your output here
 
+<img width="545" height="620" alt="image" src="https://github.com/user-attachments/assets/4d1ec3f5-2e62-4d26-9e31-1412d2848af0" />
 
 
 
@@ -62,11 +91,33 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+
+int queue[50], rear=-1, front=-1;
+void display()
+{
+    int i;
+
+    if(front == -1 || front > rear)
+    {
+        printf("No elements to display");
+    }
+    else
+    {
+        for(i = front; i <= rear; i++)
+        {
+            printf("%d ", queue[i]);
+        }
+    }
+}
+
+
+```
+
 
 Output:
 
-//paste your output here
+<img width="896" height="630" alt="image" src="https://github.com/user-attachments/assets/456d0331-8c4c-409c-95a5-030cac15a181" />
 
 
 Result:
@@ -86,11 +137,26 @@ Algorithm:
 
 Program:
 
-//type your code here
+```
+int rear, front, queue[50];
+void enqueue(int data)
+{
+    if(front == 49)
+      printf("Stack full");
+    if(front == -1)
+      front++;
+    queue[++rear]=data;
+}
+
+```
+
 
 Output:
 
-//paste your output here
+
+<img width="900" height="505" alt="image" src="https://github.com/user-attachments/assets/53d6c582-a89d-478f-ae95-adcf77c01eb6" />
+
+
 
 Result:
 Thus, the program to insert elements in queue using array is verified successfully.
@@ -121,11 +187,25 @@ o	After deletion, check if the front pointer has passed the rear pointer (front 
 
 Program:
 
-//type your code here
+```
+int front, rear;
+void dequeue(){
+    if (front == -1){
+        printf("Queue is empty");
+    }
+    else{
+        front++;
+        if (front > rear){
+            front = -1;
+            rear = -1;
+        }
+    }
+}
 
+```
 Output:
 
-//paste your output here
+<img width="896" height="672" alt="image" src="https://github.com/user-attachments/assets/ad3e41e7-025f-47b8-9aa7-2dc9d863c020" />
 
 
 Result:
