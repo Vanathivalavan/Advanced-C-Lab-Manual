@@ -16,15 +16,45 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
 
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    if (n == 1)
+        printf("one");
+    else if (n == 2)
+        printf("two");
+    else if (n == 3)
+        printf("three");
+    else if (n == 4)
+        printf("four");
+    else if (n == 5)
+        printf("five");
+    else if (n == 6)
+        printf("six");
+    else if (n == 7)
+        printf("seven");
+    else if (n == 8)
+        printf("eight");
+    else if (n == 9)
+        printf("nine");
+    else
+        printf("Greater than 9");
+
+    return 0;
+}
+
+```
 
 
 
 Output:
 
 
-//paste your output here
+<img width="557" height="252" alt="image" src="https://github.com/user-attachments/assets/561eb007-2f38-44e8-8147-286cdc53059c" />
 
 
 
@@ -47,15 +77,35 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
 
+#include <stdio.h>
+
+int main() {
+    char str[1000];
+    int count[10] = {0};
+    int i;
+    scanf("%s", str);
+    for (i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= '0' && str[i] <= '9') {
+            count[str[i] - '0']++;
+        }
+    }
+    for (i = 0; i < 10; i++) {
+        printf("%d ", count[i]);
+    }
+
+    return 0;
+}
+
+```
 
 
 
 Output:
 
 
-//paste your output here
+<img width="726" height="227" alt="image" src="https://github.com/user-attachments/assets/5d0fec5e-27d1-4617-8347-2882027c646a" />
 
 
 
@@ -84,15 +134,70 @@ Free the memory allocated for each string in s Free the memory allocated for s
  
 Program:
 
-//type your code here
+```
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int next_permutation(int n, char **s){
+    int i = n - 2;
+    while (i >= 0 && strcmp(s[i], s[i + 1]) >= 0)
+        i--;
+
+    if (i < 0)
+        return 0;
+    int j = n - 1;
+    while (strcmp(s[j], s[i]) <= 0)
+        j--;
+
+    char *temp = s[i];
+    s[i] = s[j];
+    s[j] = temp;
+    int left = i + 1;
+    int right = n - 1;
+    while (left < right){
+        temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
+
+        left++;
+        right--;
+    }
+    return 1;
+}
+int main(){
+    int n;
+    scanf("%d", &n);
+    char **s = malloc(n * sizeof(char *));
+    for (int i = 0; i < n; i++){
+        s[i] = malloc(11 * sizeof(char));
+        scanf("%s", s[i]);
+    }
+    do{
+        for (int i = 0; i < n; i++){
+            printf("%s", s[i]);
+            if (i != n - 1)
+                printf(" ");
+        }
+        printf("\n");
+    }
+    while (next_permutation(n, s));
+
+    for (int i = 0; i < n; i++)
+        free(s[i]);
+    free(s);
+    return 0;
+}
+
+```
 
 
 
 Output:
 
 
-//paste your output here
+<img width="456" height="358" alt="image" src="https://github.com/user-attachments/assets/3a4d54cf-d02e-4312-8664-e39c8dd9bcf0" />
 
 
 
@@ -117,7 +222,37 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+
+#include <stdio.h>
+int main(){
+    int n;
+    scanf("%d", &n);
+    int size = 2 * n - 1;
+    for (int i = 0; i < size; i++){
+        for (int j = 0; j < size; j++){
+            int top = i;
+            int left = j;
+            int bottom = size - 1 - i;
+            int right = size - 1 - j;
+
+            int min = top;
+
+            if (left < min)
+                min = left;
+            if (bottom < min)
+                min = bottom;
+            if (right < min)
+                min = right;
+
+            printf("%d ", n - min);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+```
 
 
 
@@ -125,10 +260,8 @@ Program:
 Output:
 
 
-//paste your output here
 
-
-
+<img width="601" height="675" alt="image" src="https://github.com/user-attachments/assets/6f8f0292-9f12-44fd-9932-301b3ab5f3a5" />
 
 
 
@@ -156,15 +289,53 @@ o	Call the square() function and display the result.
 
 Program:
 
-//type your code here
+```
 
+#include <stdio.h>
+
+int sumOfDigits()
+{
+    int n;
+    scanf("%d", &n);
+
+    int sum = 0;
+
+    sum = sum + (n % 10);
+    n = n / 10;
+
+    sum = sum + (n % 10);
+    n = n / 10;
+
+    sum = sum + (n % 10);
+    n = n / 10;
+
+    sum = sum + (n % 10);
+    n = n / 10;
+
+    sum = sum + (n % 10);
+
+    return sum;
+}
+
+int main()
+{
+    int sum;
+
+    sum = sumOfDigits();
+
+    printf("%d", sum);
+
+    return 0;
+}
+
+```
 
 
 
 Output:
 
 
-//paste your output here
+<img width="575" height="315" alt="image" src="https://github.com/user-attachments/assets/99306b69-e6ad-490d-ba04-318b845aa429" />
 
 
 
