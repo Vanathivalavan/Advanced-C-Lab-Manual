@@ -15,13 +15,40 @@ Else
 6.	Return 0
  
 Program:
+```
 
-//type your code here
+#include <stdio.h>
+struct Person
+{
+    int age;
+    char name[50];
+};
+int main()
+{
+    struct Person person[1];
+    scanf("%d", &person[0].age);
+    scanf("%s", person[0].name);
+    printf("Age:%d\n", person[0].age);
+    printf("Name:%s", person[0].name);
+    printf("vaccine:%d\n", person[0].age);
+    if(person[0].age > 18)
+    {
+        printf("eligibility:yes");
+    }
+    else
+    {
+        printf("eligibility:no");
+    }
+    return 0;
+}
 
+```
 
 Output:
 
-//paste your output here
+<img width="636" height="210" alt="m1" src="https://github.com/user-attachments/assets/d52c0dd2-5909-402f-ac45-5ba4a071fc75" />
+
+
 
 
 Result:
@@ -44,15 +71,43 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
 
+#include <stdio.h>
+
+struct Complex {
+    float real,imag;
+};
+
+struct Complex add(struct Complex c1, struct Complex c2) {
+    struct Complex result;
+    result.real = c1.real + c2.real;
+    result.imag = c1.imag + c2.imag;
+    return result;
+}
+
+int main() {
+    struct Complex c1, c2, sum;
+
+    scanf("%f", &c1.real);
+    scanf("%f", &c1.imag);
+    scanf("%f", &c2.real);
+    scanf("%f", &c2.imag);
+
+    sum = add(c1, c2);
+
+    printf("Sum = %.1f + %.1fi\n", sum.real, sum.imag);
+
+    return 0;
+}
+
+```
 
 
 
 Output:
 
-
-//paste your output here
+<img width="630" height="348" alt="image" src="https://github.com/user-attachments/assets/6cbbaf4c-e318-4576-99c5-710c02e1df64" />
 
 
 
@@ -86,21 +141,32 @@ Use scanf to input the file name into the name array.
  
 Program:
 
-//type your code here
+```
+
+#include <stdio.h>
+int main(){
+    FILE *fp;
+    char filename[50];
+    scanf("%s", filename);
+    fp = fopen(filename, "w");
+    if (fp == NULL){
+        printf("File Creation Failed");
+        return 1;
+    }
+    printf("%s File Created Successfully\n", filename);
+    printf("%s File Opened\n", filename);
+    fclose(fp);
+    printf("%s File Closed", filename);
+    return 0;
+}
 
 
-
+```
 
 Output:
 
 
-//paste your output here
-
-
-
-
-
-
+<img width="1096" height="405" alt="image" src="https://github.com/user-attachments/assets/41ec37dc-9466-4060-adc5-144464e0c4c0" />
 
 
 
@@ -133,16 +199,38 @@ Use scanf to input the file name into the name array and the number of strings i
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+int main(){
+    FILE *fp;
+    char filename[50];
+    int n, i;
+    float data;
+    scanf("%s", filename);
+    fp = fopen(filename, "w");
+    if (fp == NULL){
+        printf("File Creation Failed");
+        return 1;
+    }
+    printf("%s Opened\n", filename);
+    scanf("%d", &n);
+    for (i = 0; i < n; i++){
+        scanf("%f", &data);
+        fprintf(fp, "%.2f\n", data);
+    }
+    printf("Data added Successfully");
+    fclose(fp);
+    return 0;
+}
 
+```
 
 
 
 Output:
 
 
-//paste your output here
-
+<img width="757" height="367" alt="image" src="https://github.com/user-attachments/assets/f44122ce-8ea3-4e39-ad55-90e50abde852" />
 
 
 
@@ -187,17 +275,37 @@ Algorithm:
 
 Program:
 
-//type your code here
+```
 
+#include <stdio.h>
+struct fruit{
+    char name[20];
+    char colour[20];
+    int price;
+};
+int main(){
+    struct fruit f[3];
+    int i;
+    for(i = 0; i < 3; i++){
+        scanf("%s", f[i].name);
+        scanf("%s", f[i].colour);
+        scanf("%d", &f[i].price);
+    }
+    for(i = 0; i < 3; i++){
+        if(f[i].price >= 2000){
+            printf("Name:%s\n", f[i].name);
+            printf("colour:%s\n", f[i].colour);
+            printf("price :%d\n", f[i].price);
+        }
+    }
+    return 0;
+}
 
-
+```
 
 Output:
 
-
-//paste your output here
-
-
+<img width="576" height="598" alt="image" src="https://github.com/user-attachments/assets/32bd4ee9-ad8f-4b0d-af03-2b3b1a6a99ae" />
 
 
 
